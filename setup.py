@@ -27,7 +27,7 @@ def setup_package():
       'pandas>=1.0.1',
       'numpy>=1.22',
       'seaborn',
-      'scikit-learn<=1.2.2',
+      'scikit-learn',
       'scikit-learn-extra>=0.1.0',
       'networkx>=2.4',
       'matplotlib>=3.1.3',
@@ -38,7 +38,7 @@ def setup_package():
       'python-louvain',
       'plotly>=4.14.3',
       'pydot>=1.4.2',
-      'biopython<=1.80',
+      'biopython',
       'gtfparse',  
       'joblib',
       'nease'])

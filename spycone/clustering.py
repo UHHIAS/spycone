@@ -151,11 +151,11 @@ class clustering(clusterObj):
 
         bestsim = -np.inf
         if self.algorithm == "hierarchical" and self.linkage != "ward":
-            cluster = func(affinity="precomputed", linkage=self.linkage, n_clusters=self.n_clusters).fit(dist)
+            cluster = func(metric="precomputed", linkage=self.linkage, n_clusters=self.n_clusters).fit(dist)
             #sil = silhouette_score(dist, cluster.labels_, metric="precomputed")
 
         elif self.algorithm == "hierarchical" and self.linkage=="ward":
-            cluster = func(affinity="euclidean", linkage=self.linkage, n_clusters=self.n_clusters).fit(allrep)
+            cluster = func(metric="euclidean", linkage=self.linkage, n_clusters=self.n_clusters).fit(allrep)
             #sil = silhouette_score(allrep, cluster.labels_, metric="euclidean")
 
         elif self.algorithm == "kmedoids":

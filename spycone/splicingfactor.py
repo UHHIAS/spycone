@@ -11,7 +11,14 @@ import matplotlib.pyplot as plt
 from functools import reduce
 from scipy.stats import pearsonr
 from scipy.stats import mannwhitneyu, fisher_exact, kruskal
-from Bio.SeqUtils import GC
+# https://github.com/nextgenusfs/funannotate/issues/1000#issuecomment-1963032243
+try:
+    from Bio.SeqUtils import gc_fraction
+    def GC(sequence):
+        return 100 * gc_fraction(sequence, ambiguous="ignore")
+except ImportError:
+    # Older versions have this:
+    from Bio.SeqUtils import GC
 from joblib import Parallel, delayed
 import gc
 
